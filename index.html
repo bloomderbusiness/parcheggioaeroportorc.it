@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parcheggio sicuro e videosorvegliato a 200m dall'Aeroporto di Reggio Calabria. €20/giorno con navetta gratuita 24/7. Prenota ora al +39 392 055 7739.">
+  <meta name="keywords" content="parcheggio aeroporto Reggio Calabria, parking Tito Minniti, parcheggio custodito RC, navetta aeroporto Reggio Calabria">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Parcheggio Aeroporto Reggio Calabria | €20/giorno | Navetta Gratuita">
+  <meta property="og:description" content="Parcheggio sicuro a 200 metri dal terminal. Videosorvegliato 24/7. Chiama +39 392 055 7739.">
+  <meta property="og:type" content="website">
+  <title>Parcheggio Aeroporto Reggio Calabria | €20/giorno | Navetta Gratuita 24/7</title>
+
+  <style>
+    /* ===== CSS Variables ===== */
+    :root {
+      --color-navy: #0a2540;
+      --color-navy-light: #123456;
+      --color-gold: #f0a500;
+      --color-gold-hover: #d49200;
+      --color-white: #ffffff;
+      --color-offwhite: #f7f9fc;
+      --color-gray-100: #f0f2f5;
+      --color-gray-300: #c0c7cf;
+      --color-gray-600: #5a6270;
+      --color-gray-800: #2d333f;
+      --color-success: #1b8a4a;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --shadow-sm: 0 1px 3px rgba(10,37,64,0.08);
+      --shadow-md: 0 4px 20px rgba(10,37,64,0.12);
+      --shadow-lg: 0 8px 40px rgba(10,37,64,0.18);
+      --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      --max-width: 1100px;
+    }
+
+    /* ===== Reset ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-gray-800);
+      background: var(--color-white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== Utility ===== */
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+    /* ===== Buttons ===== */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 700; text-align: center; white-space: nowrap;
+      border: none; border-radius: var(--radius-md); cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .btn:active { transform: scale(0.97); }
+    .btn--primary {
+      background: var(--color-gold); color: var(--color-navy);
+      padding: 14px 28px; font-size: 1.05rem;
+    }
+    .btn--primary:hover { background: var(--color-gold-hover); box-shadow: var(--shadow-md); }
+    .btn--hero {
+      background: var(--color-gold); color: var(--color-navy);
+      padding: 18px 36px; font-size: 1.25rem; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+    }
+    .btn--hero:hover { background: var(--color-gold-hover); box-shadow: var(--shadow-lg); transform: translateY(-1px); }
+    .btn--outline {
+      background: transparent; color: var(--color-white);
+      border: 2px solid var(--color-white); padding: 12px 24px; font-size: 1rem;
+    }
+    .btn--outline:hover { background: var(--color-white); color: var(--color-navy); }
+
+    /* ===== Header ===== */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--color-navy);
+      box-shadow: var(--shadow-sm);
+    }
+    .header__inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 72px;
+    }
+    .header__logo {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; font-size: 1.15rem; color: var(--color-white);
+    }
+    .header__logo-icon {
+      width: 40px; height: 40px; background: var(--color-gold);
+      border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; color: var(--color-navy); flex-shrink: 0;
+    }
+    .header__phone {
+      display: flex; align-items: center; gap: 6px;
+      color: var(--color-gold); font-weight: 700; font-size: 1.1rem;
+    }
+    .header__phone:hover { color: var(--color-white); }
+
+    /* ===== Hero ===== */
+    .hero {
+      position: relative; overflow: hidden;
+      background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+      color: var(--color-white); padding: 80px 0 90px;
+    }
+    .hero__inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 32px; }
+    .hero__badge {
+      display: inline-block; background: rgba(255,255,255,0.12);
+      padding: 8px 18px; border-radius: 50px; font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.5px; margin-bottom: 4px;
+    }
+    .hero__headline { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.2; max-width: 700px; }
+    .hero__headline span { color: var(--color-gold); }
+    .hero__price {
+      background: var(--color-white); color: var(--color-navy);
+      padding: 12px 32px; border-radius: var(--radius-lg);
+      font-weight: 800; font-size: 1.4rem;
+      box-shadow: var(--shadow-md);
+    }
+    .hero__sub { font-size: 1.1rem; opacity: 0.9; max-width: 500px; }
+    .hero__cta-row { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; }
+
+    /* ===== Value Props ===== */
+    .value-props { padding: 80px 0; background: var(--color-offwhite); }
+    .value-props__inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .vp-card {
+      background: var(--color-white); border-radius: var(--radius-lg);
+      padding: 36px 28px; text-align: center;
+      box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .vp-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .vp-card__icon {
+      width: 64px; height: 64px; margin: 0 auto 20px;
+      background: var(--color-gray-100); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .vp-card__icon svg { width: 32px; height: 32px; color: var(--color-navy); }
+    .vp-card__title { font-size: 1.15rem; font-weight: 700; color: var(--color-navy); margin-bottom: 8px; }
+    .vp-card__desc { font-size: 0.95rem; color: var(--color-gray-600); line-height: 1.5; }
+
+    /* ===== How It Works ===== */
+    .how-it-works { padding: 80px 0; }
+    .section__title { text-align: center; font-size: clamp(1.5rem, 4vw, 2rem); color: var(--color-navy); margin-bottom: 48px; }
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    .step { text-align: center; position: relative; }
+    .step__number {
+      width: 52px; height: 52px; margin: 0 auto 20px;
+      background: var(--color-navy); color: var(--color-gold);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 1.3rem;
+    }
+    .step__title { font-weight: 700; font-size: 1.1rem; color: var(--color-navy); margin-bottom: 6px; }
+    .step__desc { color: var(--color-gray-600); font-size: 0.95rem; }
+
+    /* ===== CTA Band ===== */
+    .cta-band {
+      background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-navy-light) 100%);
+      color: var(--color-white); padding: 64px 0; text-align: center;
+    }
+    .cta-band__inner { display: flex; flex-direction: column; align-items: center; gap: 24px; }
+    .cta-band__title { font-size: clamp(1.4rem, 4vw, 1.9rem); line-height: 1.25; }
+    .cta-band__phone {
+      font-size: clamp(1.8rem, 6vw, 2.8rem); font-weight: 800; color: var(--color-gold);
+      letter-spacing: 1px; transition: color 0.15s;
+    }
+    .cta-band__phone:hover { color: var(--color-white); }
+    .cta-band__sub { font-size: 1rem; opacity: 0.85; }
+
+    /* ===== Map / Contact ===== */
+    .map-section { padding: 80px 0; background: var(--color-offwhite); }
+    .map-section__inner { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .map-section__info h2 { font-size: 1.6rem; color: var(--color-navy); margin-bottom: 16px; }
+    .map-section__info p { color: var(--color-gray-600); margin-bottom: 12px; line-height: 1.5; }
+    .map-section__info .btn--primary { margin-top: 16px; }
+    .map-embed {
+      width: 100%; aspect-ratio: 4/3; border: none; border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md); background: var(--color-gray-300);
+    }
+
+    /* ===== Footer ===== */
+    .footer {
+      background: var(--color-navy); color: var(--color-gray-300);
+      padding: 32px 0; text-align: center; font-size: 0.9rem;
+    }
+    .footer a { color: var(--color-gold); }
+    .footer a:hover { text-decoration: underline; }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .value-props__inner { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 40px; }
+      /* Step connector arrows - horizontal on mobile via pseudo-elements removed for simplicity */
+      .map-section__inner { grid-template-columns: 1fr; }
+      .map-embed { aspect-ratio: 16/9; }
+      .header__logo { font-size: 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      .header__logo span { display: none; }
+      .hero { padding: 48px 0 56px; }
+      .hero__cta-row { flex-direction: column; width: 100%; }
+      .hero__cta-row .btn { width: 100%; justify-content: center; }
+      .container { padding: 0 16px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="/" class="header__logo" aria-label="Parcheggio Aeroporto RC - Home">
+        <div class="header__logo-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+        </div>
+        <span>Parcheggio Aeroporto RC</span>
+      </a>
+      <a href="tel:+393920557739" class="header__phone" aria-label="Chiama ora +39 392 055 7739">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        +39 392 055 7739
+      </a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" aria-labelledby="hero-headline">
+      <div class="container hero__inner">
+        <span class="hero__badge">📍 A soli 200 metri dal Terminal</span>
+        <h1 id="hero-headline" class="hero__headline">
+          Parcheggio <span>sicuro e videosorvegliato</span> per l'Aeroporto di Reggio Calabria
+        </h1>
+        <div class="hero__price">€20 / giorno</div>
+        <p class="hero__sub">Tariffa fissa. Navetta gratuita 24 ore su 24, 7 giorni su 7. Area recintata e illuminata.</p>
+        <div class="hero__cta-row">
+          <a href="tel:+393920557739" class="btn btn--hero">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Chiama per Prenotare
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Value Propositions ===== -->
+    <section class="value-props" aria-labelledby="vp-title">
+      <div class="container">
+        <h2 id="vp-title" class="section__title">Perché scegliere il nostro parcheggio</h2>
+        <div class="value-props__inner">
+
+          <!-- VP 1: Shuttle -->
+          <article class="vp-card">
+            <div class="vp-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="vp-card__title">Navetta Gratuita 24/7</h3>
+            <p class="vp-card__desc">Servizio navetta incluso nel prezzo. Disponibile a qualsiasi ora, tutti i giorni. Arrivi alle 3 di notte? Ti veniamo a prendere.</p>
+          </article>
+
+          <!-- VP 2: Security -->
+          <article class="vp-card">
+            <div class="vp-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="vp-card__title">Area Sicura e Monitorata</h3>
+            <p class="vp-card__desc">Area completamente recintata, illuminata e videosorvegliata 24 ore su 24. La tua auto è al sicuro mentre voli.</p>
+          </article>
+
+          <!-- VP 3: Proximity -->
+          <article class="vp-card">
+            <div class="vp-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="vp-card__title">A 200 Metri dal Terminal</h3>
+            <p class="vp-card__desc">Solo 5 minuti di navetta dall'aeroporto. Lascia l'auto e sei subito al check-in. Zero stress.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== How It Works ===== -->
+    <section class="how-it-works" aria-labelledby="steps-title">
+      <div class="container">
+        <h2 id="steps-title" class="section__title">Come funziona</h2>
+        <div class="steps">
+
+          <div class="step">
+            <div class="step__number">1</div>
+            <h3 class="step__title">Arrivi e Parcheggi</h3>
+            <p class="step__desc">Raggiungi il parcheggio a 200m dall'aeroporto. Lascia la tua auto in un'area recintata e sorvegliata.</p>
+          </div>
+
+          <div class="step">
+            <div class="step__number">2</div>
+            <h3 class="step__title">Navetta Gratuita</h3>
+            <p class="step__desc">La nostra navetta ti accompagna al terminal in 5 minuti. Servizio attivo 24 ore su 24.</p>
+          </div>
+
+          <div class="step">
+            <div class="step__number">3</div>
+            <h3 class="step__title">Torni e Riparti</h3>
+            <p class="step__desc">Al rientro, chiamaci e la navetta ti viene a prendere al terminal. Ritrovi l'auto come l'hai lasciata.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA Band ===== -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container cta-band__inner">
+        <h2 id="cta-title" class="cta-band__title">Prenota il tuo posto auto in 30 secondi</h2>
+        <a href="tel:+393920557739" class="cta-band__phone">+39 392 055 7739</a>
+        <p class="cta-band__sub">Chiamata diretta. Nessuna registrazione. Nessuna app. Solo una telefonata.</p>
+      </div>
+    </section>
+
+    <!-- ===== Map + Contact ===== -->
+    <section class="map-section" aria-labelledby="map-title">
+      <div class="container map-section__inner">
+        <div class="map-section__info">
+          <h2 id="map-title">Dove siamo</h2>
+          <p><strong>Indirizzo:</strong> Via Aeroporto, 200m dal Terminal Tito Minniti — Reggio Calabria (RC)</p>
+          <p><strong>Orari:</strong> Aperto 24 ore su 24, 7 giorni su 7</p>
+          <p><strong>Telefono:</strong> <a href="tel:+393920557739">+39 392 055 7739</a></p>
+          <p><strong>Tariffa:</strong> €20 al giorno — tariffa fissa, nessun costo nascosto</p>
+          <a href="tel:+393920557739" class="btn btn--primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            Chiama Ora
+          </a>
+        </div>
+
+        <!-- Google Maps embed. Replace with actual coordinates when address is finalized. -->
+        <!-- Current pin: approximate location near Aeroporto Tito Minniti, Reggio Calabria -->
+        <iframe
+          class="map-embed"
+          title="Mappa Parcheggio Aeroporto Reggio Calabria"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3135.5708199361387!2d15.651274!3d38.074000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x131421114d3b0c7b%3A0x6e3b3e7b1b0a53e0!2sAeroporto%20di%20Reggio%20Calabria%20Tito%20Minniti!5e0!3m2!1sit!2sit!4v1700000000000"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Parcheggio Aeroporto RC — Tutti i diritti riservati.</p>
+      <p>Parcheggio privato per Aeroporto di Reggio Calabria "Tito Minniti". | <a href="tel:+393920557739">+39 392 055 7739</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
